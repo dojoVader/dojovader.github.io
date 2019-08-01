@@ -7,7 +7,7 @@ date: 2019-04-21
 image: 
         feature: soft-trees.jpg
 ---
-Welcome to today's entry, so lately I found out about a new tool called the Adobe XD, which as implied; built by Adobe technologies and so far playing with this has been interesting and jaw-breaking.
+Welcome to today's entry, so lately I found out about a new tool called the Adobe XD, which as implied; is built by Adobe technologies and so far playing with this; has been both interesting and jaw-breaking.
 
 The Adobe XD is a nifty tool to create mockups for both different client (Mobile, Desktop and mobile watches), one of the issues with prototype is that, most times they are usually so static, clients hardly can get a feel of what the final output can be seen as , or even indepth interactivity of the application workflow to give the client a feel of what the application will look like. Here is a screenshot of the Adobe XD
 
