@@ -14,15 +14,13 @@ Now fast-forward the options are much diverse than ever. There is NativeScript, 
 
 This seems like an exciting time, However I do have a current dilemma at hand. One of the pitfall of Hybrid Applications is not having raw and ultimate power to do every and anything but also the additional absctraction. Apache Cordova required me to look at the source code so I could understand the underlying architecture better and gain some insights. This knowledge was helpful when dealing with Cordova Plugin Development. 
 
-My Approach is 2 ways:
+My Approach are :
 
-1.Pick up Hybrid then later on Android Native Development
+1. Pick up Hybrid then later on Android Native Development
 
 2. Pick up Native Android before diving into Hybrid
 
-or
-
-Unofficial option
+3. Unofficial option
 
 Pick up both side by side.
 
