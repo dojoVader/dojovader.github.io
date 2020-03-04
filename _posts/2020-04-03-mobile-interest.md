@@ -3,7 +3,7 @@ layout: post-light-feature
 title: Interested in Mobile Development
 description: "Mobile Development , React Native"
 categories: [articles, blog, journal]
-date: 2019-04-21
+date: 2020-03-04
 image: 
         feature: soft-trees.jpg
 ---
