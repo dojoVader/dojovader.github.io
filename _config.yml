@@ -1,13 +1,13 @@
-name: Your New Jekyll Site
-description: Blogging about stuffs
+name: Okeowo Aderemi
+description: Blogging about Technical Stuff and Rants
 meta_description: "Your New Jekyll Site, Blogging about stuffs"
 
 markdown: kramdown
 highlighter: rouge
 logo: false
 paginate: 15
-baseurl: /kasper
-domain_name: "http://yourblog-domain.com"
+baseurl: /
+domain_name: "http://dojovader.github.com"
 google_analytics: "UA-XXXXXXXX-X"
 plugins: [jekyll-paginate]
 
