@@ -1,5 +1,5 @@
 ---
-layout: post-light-feature
+layout: post
 title: Interested in Mobile Development
 description: "Mobile Development , React Native"
 categories: [articles, blog, journal]

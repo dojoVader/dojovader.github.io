@@ -1,5 +1,5 @@
 ---
-layout: post-light-feature
+layout: post
 title: Adobe XD and Angular Material Wahala
 description: "Introduction to Adobe XD and Angular material Wahala"
 categories: [articles, blog, journal]
