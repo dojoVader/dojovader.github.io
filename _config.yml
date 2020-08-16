@@ -1,6 +1,6 @@
 name: Okeowo Aderemi
 description: Blogging about Technical Stuff and Rants
-meta_description: "Your New Jekyll Site, Blogging about stuffs"
+meta_description: "This is my personal website where I get to blog about Technical contents and all"
 
 markdown: kramdown
 highlighter: rouge
@@ -8,7 +8,7 @@ logo: true
 paginate: 15
 baseurl: /
 domain_name: "http://dojovader.github.com"
-google_analytics: "UA-XXXXXXXX-X"
+google_analytics: "UA-175517168-1"
 plugins: [jekyll-paginate]
 
 # Details for the RSS feed generator
