@@ -4,7 +4,7 @@ meta_description: "Your New Jekyll Site, Blogging about stuffs"
 
 markdown: kramdown
 highlighter: rouge
-logo: false
+logo: true
 paginate: 15
 baseurl: /
 domain_name: "http://dojovader.github.com"
@@ -13,7 +13,7 @@ plugins: [jekyll-paginate]
 
 # Details for the RSS feed generator
 url: ""
-author: "Your Name"
+author: "Okeowo Aderemi"
 
 # Disqus config
-disqus-shortname: ""
+disqus-shortname: "dojovader"
