@@ -1,57 +1,92 @@
-{% include head.html %}
+---
+layout: default
+disqus: false
+archive: false
+post_class: post-template
+---
 
-<section class="article">
+<header class="main-header post-head {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+    <nav class="main-nav {% if page.cover %} overlay {% endif %} clearfix">
+        <a class="back-button icon-arrow-left" href="{{'/' | relative_url }}">Home</a>
+        <a class="subscribe-button icon-feed" href="{{'feed.xml' | relative_url }}">Subscribe</a>
+    </nav>
+</header>
 
-{% if page.image.feature %}
-  <div class="overlay"></div>
-  {% if page.image.feature contains 'https://' | escape or page.image.feature contains 'http://' | escape %}
-  <div class="featured-image" style="background-image: url({{ page.image.feature }})"></div>
-  {% else %}
-  <div class="featured-image" style="background-image: url({{ site.url }}/images/{{ page.image.feature }})"></div>
-  {% endif %}
-{% else %}
-  <div class="overlay"></div>
-  <div class="featured-image" style="background-image: url({{ site.url }}/images/typewriter.jpg)"></div>
-{% endif %}
+<main class="content" role="main">
 
+    <article class="post">
 
-      <article class="wrap post">
         <header class="post-header">
-          <hgroup>
-            <h1>{{page.title}}</h1>
-            <p class="date">{{page.date | date: "%b %d, %Y" }}</p>
-            <p class="intro">{% if page.description %}{{ page.description }}{% else %}{{ page.tagline }}{% endif %}</p>
-          </hgroup>
+            <h1 class="post-title">{{ page.title }}</h1>
+            <section class="post-meta">
+                {% if page.categories.size > 0 %}
+                    {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
+                {% endif %}
+                <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
+            </section>
         </header>
 
-        {{ content }}
+<!--         <header class="post-header">
+            <a id="blog-logo" href="{{site.url}}">
+                {% if site.logo %}
+                    <img src="{{site.logo}}" alt="{{ site.name }}" />
+                {% else %}
+                    <span class="blog-title">{{ site.name }}</span>
+                {%endif%}
+            </a>
+        </header> -->
 
-      <a class="share" href="https://twitter.com/intent/tweet?text=&quot;{{ page.title }}&quot;%20{{ site.canonical }}{{ page.url }}%20via%20&#64;{{ site.owner.twitter }}" data-dnt="true">Share</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <!-- <span class="post-meta">
+            <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
+            {% if page.categories.size > 0 %}
+                {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
+            {% endif %}
+        </span> -->
 
-      {% if page.comments %}
-      <aside class="disqus">
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = '{{ site.owner.disqus }}'; // required: replace example with your forum shortname
+        <!-- <h1 class="post-title">{{ page.title }}</h1> -->
 
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      </aside>
-      {% endif %}
+        <section class="post-content">
+            {{content}}
+        </section>
 
+        {% if page.archive %}
+        <section class="archive">
+            <h5>Archive</h5>
+            <ul>
+                {% for post in site.posts %}
+                    <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url  | relative_url}}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
 
-      </article>
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            {% if site.author %}
+                <figure class="author-image">
+                    <a class="img" href="{{'/' | relative_url }}" style="background-image: url({{'/assets/images/profile.png' | relative_url}})">
+                    <span class="hidden">{{site.author}}'s Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> {{ site.author }} </h4>
+                    <!-- Author Bio -->
+                    <p>
+                        Here goes the author description. You might want to place some links too in here
+                    </p>
+                </section>
+            {% endif %}
 
-    </section>
-</div>
+            <!-- Share links section -->
+            {% include share.html %}
 
-{% include footer.html %}
+            <!-- Disqus comments -->
+            {% if page.disqus %}
+                {% include disqus.html %}
+            {% endif %}
+
+        </footer>
+
+    </article>
+
+</main>
