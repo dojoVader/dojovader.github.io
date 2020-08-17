@@ -8,7 +8,8 @@ image:
         feature: soft-trees.jpg
 ---
 
-Over the past few months, I have found myself needing to get back to studying Algorithms and Data Structure, as a better way to re-learn and also catch up, seeing times are now flexible. I started with a course from Robert Sedgewick from coursera and also some few Youtube resources on the internet. 
+I decided to take some time to re-study some Algo and DS materials, because there are some interesting concepts I intend to fully grasp and also have a better understanding rather than just reading for the sake of interviews. This is will be studying for the purpose of understanding and becoming a better programmer and more of a self-confidence booster when tackling problems.
+I started with a course from Robert Sedgewick from coursera and also some few Youtube resources on the internet. 
 
 [Analysis of Algorithms](https://www.coursera.org/learn/analysis-of-algorithms/lecture/36aPp/example-quicksort)
 
