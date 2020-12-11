@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tech Log: [ Svelte Development and Alternative for VSCode ]
+title: Svelte Development and Alternative for VSCode
 description: "Container , Frontend"
 categories: [articles, blog, journal]
 date: 2020-11-10
