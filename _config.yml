@@ -17,7 +17,7 @@ title: dojoVader
 email: okeowoaderemi@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A personal technical journal of learning new tech and findings.
-baseurl: "/hitchens" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://dojovader.io" # the base hostname & protocol for your site, e.g. http://example.com
 icon: /assets/images/icon-512.png
 twitter_username: dojovader
