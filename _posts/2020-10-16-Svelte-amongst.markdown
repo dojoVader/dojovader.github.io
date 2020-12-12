@@ -8,9 +8,11 @@ image:
         feature: sublime-lsp.jpg
 ---
 
-## Seeking alternatives to Electron apps in lieu of Memory Management
+## Svelte Framework
 
 My current partner requires me to work with Svelte Framework, it is a really interesting framework, in the sense that it compiles to JavaScript, it gives you the ability to write some interesting code in a minimal manner. Compared to Angular & React. The learning curve for Svelte is really small. There is no special magic going on here, it believes in working directly with DOM Manipulation where in the case of React and others using Virtual DOM to handle diff and computation. It is an interesting way to development. During Debugging, it is really easy to see that it is running pure JavaScript as the call stack trace are very minimal. 
+
+![LSP Preview](https://raw.githubusercontent.com/tomv564/LSP/master/docs/images/screenshot-hover.png)
 
 
 ### Electron Replacement

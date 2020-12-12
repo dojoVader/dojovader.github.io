@@ -43,3 +43,4 @@ plugins:
 
 paginate: 3
 paginate_path: "/page/:num/"
+show_excerpts: true
