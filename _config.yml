@@ -100,9 +100,9 @@ analytics:
 author:
   name: "Okeowo Aderemi"
   avatar: "/assets/images/me.jpg"
-    bio: "hi all!"
-    location: "Seoul, Korea"
-    email: "youremailhere@xxxxxx.com"
+  bio: "hi all!"
+  location: "Seoul, Korea"
+  email: "youremailhere@xxxxxx.com"
 
   links: # 사이트 링크
 #     - label: "Email"
