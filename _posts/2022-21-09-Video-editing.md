@@ -11,6 +11,7 @@ tags:
   - [hobby, nocode]
 toc: true
 toc_sticky: true
+permalink: /categories/editing/
 ---
 
 
