@@ -11,7 +11,7 @@ tags:
   - [upwork, upskilling]
 toc: true
 toc_sticky: true
-permalink: /categories/editing/
+permalink: /upwork/upskilling/
 ---
 
 ![Broke Freelancer](/assets/images/broke.webp)
