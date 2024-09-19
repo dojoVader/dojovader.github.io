@@ -49,7 +49,7 @@ I've learned a lot from working on Chrome extension projects, and I think that t
  * The importance of being Saas focused, and how to build a Saas product within the Chrome extension ecosystem
  * Helping clients understand the importance of a Chrome extension in their business model with regard to adding premium features and adopting a subscription model.
  * The importance of understanding Advanced JavaScript concepts like CORS, Monkey Patching and CSP (Content Security Policy)
- * Leverage a networking relationship with Co-founders and taking advantage of that relationship. I met a co-founder of a Saas product on Upwork, and we've been able to collaborate on a few projects together. e.g Refermate, Wondr AI and Cue.
+ * Leverage a networking relationship with Co-founders and taking advantage of that relationship. I met a co-founder of a Saas product on Upwork, and we've been able to collaborate on a few projects together. e.g Refermate, Wondr AI and CueTheMusic.
  * Offscreen API destroys when the media is paused for 15 seconds :'(
  * Script Injection and Content Security Policy (CSP) is a big deal in Chrome extension development (MV3), the only hack is to use the manifest to inject into the host page using the World context.
  * React Props are stored in the DOM, and can be accessed by the host page, but not from the extension. So you can inject a script to access the props and send it back to the extension using Message Passing.
