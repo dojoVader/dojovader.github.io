@@ -1,12 +1,12 @@
 ---
 title: "Firebase Integration with Chrome Extension"
 excerpt: "Integrating Firebase with Chrome Extension"
-categories: 
+categories:
   - Firebase SDK
   - Chrome Extension
 date: 2024-09-20
 author: "Okeowo Aderemi"
-tags: 
+tags:
   - [firebase, chrome-extension]
 toc: true
 toc_sticky: true
@@ -15,18 +15,16 @@ permalink: /chrome-extension/firebase/
 
 ### Introduction
 
-This is a brief overview of integrating Firebase with a Chrome Extension. Firebase, developed by Google, is a platform designed for building mobile and web applications. In my case, I use Firebase Functions, Storage, and Authentication to manage Stripe subscriptions, handle user authentication, and trigger Firebase functions directly from the Chrome extension.
+This is a brief overview of integrating Firebase with Chrome Extension. Firebase is a platform designed for building mobile and web applications with real-time features. In my case, I use the Firebase SDK to manage Stripe subscriptions, handle user authentication, and trigger Firebase functions directly from the extension.
 
-Let's get started.
+So let's get started, I will walk you through the steps to integrate Firebase with your Chrome Extension.
 
 The steps are as follows:
-
 
 #### Step 1: Create a Firebase Project
 
 The first thing you need to do is to setup a Firebase Project for your extension. You can do this by going to the [Firebase Console](https://console.firebase.google.com/) and clicking on the "Add Project" button. You should select the Web option for the extension.
 ![Firebase Authentication](/assets/images/Firebase%20Project.png)
-
 
 #### Step 2: Add Firebase to your Chrome Extension
 
@@ -37,7 +35,6 @@ npm install firebase
 ```
 
 This should install the Firebase library into your project.
-
 
 #### Step 3: Initialize Firebase in your Chrome Extension
 
@@ -65,13 +62,13 @@ export const app = initializeApp(firebaseConfig);
 
 #### Step 4: Enable Firebase Authentication
 
-You need to enable Firebase Authentication, this is found on the Firebase Console under the Authentication tab. You can enable email/password, Google, Facebook, Twitter, Github, and Phone authentication. 
+You need to enable Firebase Authentication, this is found on the Firebase Console under the Authentication tab. You can enable email/password, Google, Facebook, Twitter, Github, and Phone authentication.
 
-Here is a screenshot of the Firebase Authentication tab: Firebase authentication easily handles user authentication and authorization. 
+Here is a screenshot of the Firebase Authentication tab: Firebase authentication easily handles user authentication and authorization.
 
-NOTE: If you are using Firebase to track Stripe subscriptions, you can also add claims to the user object to track the user's subscription status. This is very useful for building extensions with premium features.
+NOTE: You can also add claims to the user object to track the user's subscription status. This is very useful for building extensions with premium features.
 
-Fore more information about claims, you can check the [Firebase documentation](https://firebase.google.com/docs/auth/admin/custom-claims).
+Fore more information about claims, you can check the [Firebase documentation](https://firebase.google.com/docs/auth/admin/custom-claims). It should be noted that the claims are set on the server-side which means Node.js or Firebase functions.
 
 ![Firebase Authentication](/assets/images/authentication.png)
 
@@ -96,90 +93,69 @@ const auth = getAuth(app);
 
 // Sign in with email and password
 signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        // ...
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-    });
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
 ```
-
 
 ## Remote Hosted Code (RHC)
 
-At this point, you have successfully integrated Firebase/Authentication in your project. However, you need to be aware of the Chrome Web Store's policy on remote-hosted code. The Chrome Web Store forbids remote-hosted code, and the Firebase SDK is a culprit fr RHC. 
+At this point, you have successfully integrated Firebase/Authentication in your project. However, you need to be aware of the Chrome Web Store's policy on remote-hosted code. The Chrome Web Store forbids remote-hosted code, and the Firebase SDK is a culprit fr RHC.
 
 ### How do you detect remote hosted code?
 
-Remote hosted codes are codes injected remotely, so the easiest way to spot this in the build is to search for `script` that are dynamically. Here is an example of such code.
+As the name implies, remote-hosted codes, are codes that are 'introduced' into your extension from an external source. Google frowns at this, because of the implication of injecting malicious code into your extension. All codes must be loaded from the extension. However Firebase SDK loads some of its code from an external source, the easiest way to spot a RHC in Firebase is look for scripts that are dynamically created to load external scripts.
+
+The script below is an example of a remote-hosted code in Firebase SDK
 
 ```javascript
 // This line of code will cause the Chrome Web store to reject your extension
 _setExternalJSProvider({
-    loadJS(url) {
-        // TODO: consider adding timeout support & cancellation
-        return new Promise((resolve, reject) => {
-            const el = document.createElement('script');
-            el.setAttribute('src', url);
-            el.onload = resolve;
-            el.onerror = e => {
-                const error = _createError("internal-error" /* AuthErrorCode.INTERNAL_ERROR */);
-                error.customData = e;
-                reject(error);
-            };
-            el.type = 'text/javascript';
-            el.charset = 'UTF-8';
-            getScriptParentElement().appendChild(el);
-        });
-    },
-    gapiScript: 'https://apis.google.com/js/api.js',
-    recaptchaV2Script: 'https://www.google.com/recaptcha/api.js',
-    recaptchaEnterpriseScript: 'https://www.google.com/recaptcha/enterprise.js?render='
+  loadJS(url) {
+    // TODO: consider adding timeout support & cancellation
+    return new Promise((resolve, reject) => {
+      const el = document.createElement("script");
+      el.setAttribute("src", url);
+      el.onload = resolve;
+      el.onerror = (e) => {
+        const error = _createError(
+          "internal-error" /* AuthErrorCode.INTERNAL_ERROR */,
+        );
+        error.customData = e;
+        reject(error);
+      };
+      el.type = "text/javascript";
+      el.charset = "UTF-8";
+      getScriptParentElement().appendChild(el);
+    });
+  },
+  gapiScript: "https://apis.google.com/js/api.js",
+  recaptchaV2Script: "https://www.google.com/recaptcha/api.js",
+  recaptchaEnterpriseScript:
+    "https://www.google.com/recaptcha/enterprise.js?render=",
 });
-
 ```
 
-This was the code I used to get my extension approved
+To fix this, I simply return a resolved promise, as shown below:
+
 ```javascript
 // This line of code will cause the Chrome Web store to reject your extension
 _setExternalJSProvider({
-    loadJS(url) {
-        // TODO: consider adding timeout support & cancellation
-        return new Promise.resolve(true);
-    }
+  loadJS(url) {
+    // TODO: consider adding timeout support & cancellation
+    return new Promise.resolve(true);
+  },
 });
-
 ```
 
 #### Future Consideration
 
-I plan to implement a plugin in Webpack that removes that specific RHC code during build times, as removing it manually is not intuitive. But that is a current workaround that works. 
+It's quite cubersome to manually edit the Firebase SDK to remove the remote-hosted code. However, you can automate this process by using a tool like [Webpack](https://webpack.js.org/), a caveat is to ensure that your Webpack plugin only removes the culprit and nothing else, this ensures that the plugins is ran, everytime you build your extension with Webpack.
 
-Thanks and let me know if this short note helped. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The end.
