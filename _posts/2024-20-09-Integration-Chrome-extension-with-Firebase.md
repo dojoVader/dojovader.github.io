@@ -66,11 +66,13 @@ You need to enable Firebase Authentication, this is found on the Firebase Consol
 
 Here is a screenshot of the Firebase Authentication tab: Firebase authentication easily handles user authentication and authorization.
 
+
+![Firebase Authentication](/assets/images/authentication.png)
+
 NOTE: You can also add claims to the user object to track the user's subscription status. This is very useful for building extensions with premium features.
 
 Fore more information about claims, you can check the [Firebase documentation](https://firebase.google.com/docs/auth/admin/custom-claims). It should be noted that the claims are set on the server-side which means Node.js or Firebase functions.
 
-![Firebase Authentication](/assets/images/authentication.png)
 
 #### Step 5: Firebase SDK Documentation and using Firebase Authentication
 
@@ -156,6 +158,6 @@ _setExternalJSProvider({
 
 #### Future Consideration
 
-It's quite cubersome to manually edit the Firebase SDK to remove the remote-hosted code. However, you can automate this process by using a tool like [Webpack](https://webpack.js.org/), a caveat is to ensure that your Webpack plugin only removes the culprit and nothing else, this ensures that the plugins is ran, everytime you build your extension with Webpack.
+It's quite cumbersome to manually edit the Firebase SDK to remove the remote-hosted code. However, you can automate this process by using a tool like [Webpack](https://webpack.js.org/), a caveat is to ensure that your Webpack plugin only removes the culprit and nothing else, this ensures that the plugins is ran, everytime you build your extension with Webpack.
 
 The end.
