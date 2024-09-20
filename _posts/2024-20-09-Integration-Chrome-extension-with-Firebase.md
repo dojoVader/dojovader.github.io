@@ -108,7 +108,7 @@ signInWithEmailAndPassword(auth, email, password)
 
 ## Remote Hosted Code (RHC)
 
-At this point, you have successfully integrated Firebase/Authentication in your project. However, you need to be aware of the Chrome Web Store's policy on remote-hosted code. The Chrome Web Store forbids remote-hosted code, and the Firebase SDK is a culprit fr RHC.
+At this point, you have successfully integrated Firebase/Authentication in your project. However, you need to be aware of the Chrome Web Store's policy on remote-hosted code. The Chrome Web Store forbids remote-hosted code, and the Firebase SDK falls into this category. This is because the Firebase SDK loads some of its code from an external source, which is against the Chrome Web Store policy.
 
 ### How do you detect remote hosted code?
 
