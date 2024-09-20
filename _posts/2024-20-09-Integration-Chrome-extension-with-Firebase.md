@@ -108,25 +108,16 @@ signInWithEmailAndPassword(auth, email, password)
 
 ## Remote Hosted Code (RHC)
 
-At this point, you have successfully integrated Firebase/Authentication in your project. However, you need to be aware of the Chrome Web Store's policy on remote-hosted code. The Chrome Web Store forbids remote-hosted code, and the Firebase SDK falls into this category. This is because the Firebase SDK loads some of its code from an external source.
+At this point, you have successfully integrated Firebase/Authentication in your project. However, you need to be aware of the Chrome Web Store's policy on remote-hosted code. The Chrome Web Store forbids remote-hosted code, and the Firebase SDK falls into this category. This is because the Firebase SDK loads some of its code from an external source, which is against the Chrome Web Store policy.
 
 ### How do you detect remote hosted code?
 
 As the name implies, remote-hosted codes, are codes that are 'introduced' into your extension from an external source. Google frowns at this, because of the implication of injecting malicious code into your extension. All codes must be loaded from the extension. However Firebase SDK loads some of its code from an external source, the easiest way to spot a RHC in Firebase is look for scripts that are dynamically created to load external scripts.
 
-Th0+++
+The script below is an example of a remote-hosted code in Firebase SDK
 
-
-below is an example of a remote-hosted code in Firebase SDK
-
-``0+++
-
-
-ipt
-//0+++
-
-
-This line of code will cause the Chrome Web store to reject your extension
+```javascript
+// This line of code will cause the Chrome Web store to reject your extension
 _setExternalJSProvider({
   loadJS(url) {
     // TODO: consider adding timeout support & cancellation
@@ -167,6 +158,6 @@ _setExternalJSProvider({
 
 #### Future Consideration
 
-It's quite cumbersome to manually edit the Firebase SDK to remove the remote-hosted code. However, you can automate this process by using a tool like [Webpack](https://webpack.js.org/), a caveat is to ensure that your Webpack plugin only removes the culprit and nothing else, this ensures that the plugins is ran, everytime you build your extension with Webpack.
+It's quite cumbersome to manually edit the Firebase SDK to remove the remote-hosted code. However, you can automate this process by using a tool like [Webpack](https://webpack.js.org/) in the build process to remove the remote-hosted code.
 
 The end.
