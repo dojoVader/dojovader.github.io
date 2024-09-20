@@ -114,10 +114,19 @@ At this point, you have successfully integrated Firebase/Authentication in your 
 
 As the name implies, remote-hosted codes, are codes that are 'introduced' into your extension from an external source. Google frowns at this, because of the implication of injecting malicious code into your extension. All codes must be loaded from the extension. However Firebase SDK loads some of its code from an external source, the easiest way to spot a RHC in Firebase is look for scripts that are dynamically created to load external scripts.
 
-The script below is an example of a remote-hosted code in Firebase SDK
+Th0+++
 
-```javascript
-// This line of code will cause the Chrome Web store to reject your extension
+
+below is an example of a remote-hosted code in Firebase SDK
+
+``0+++
+
+
+ipt
+//0+++
+
+
+This line of code will cause the Chrome Web store to reject your extension
 _setExternalJSProvider({
   loadJS(url) {
     // TODO: consider adding timeout support & cancellation
