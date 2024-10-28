@@ -18,7 +18,7 @@ permalink: /chrome-extension/building-a-saas-product/
 
 Hey there! For the past couple of years, I’ve dived into building Chrome extensions for clients and startups. I’ve discovered that creating a SaaS extension is not just fun but also a super smart business move. So, I thought, why not document my journey? I’m excited to share my experiences, lessons learned, and maybe some tips along the way as I work on this SaaS extension. Let’s see where this adventure takes us!
 
-## Tools
+### Toolset/Platforms
 
 For this project, I will be using the following tools/platforms:
 
@@ -39,7 +39,7 @@ For this project, I will be using the following tools/platforms:
 * **NestJS** (NestJS is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. I will be using it to build a backend server for my Chrome extension, the backend server will be responsible for handling Stripe webhooks, and managing user subscriptions). I always held a strong disdain for Node backend applications until I encountered this framework. It shares a similar Module structure with the Angular framework and also the style of using decorators feels closer to Spring Boot. Where NestJS shines is the ability to take advantage of TypeScript to write custom decorators that wrap around the Express execution context, and also the ability to write custom decorators that can be used to inject dependencies into the controller methods. You can easily mirror the same annotation style of Java Spring Boot in NestJS. It also serves as a proxy for the Chrome extension to interact with 3rd party APIs and secure your API keys from being exposed in the Chrome extension source code.
 * Docker + Digital Ocean: Deploy the backend application
 
-## Monetization Strategy
+### Monetization Strategy
 
 Monetizing a Chrome extension can be tricky; knowing the right strategy and model to adopt plays an important role, obviously due to my lack of experience with monetization. I can only make probable assumptions on what could work, but I will be exploring the following monetization strategies below:
 
@@ -52,15 +52,15 @@ Monetizing a Chrome extension can be tricky; knowing the right strategy and mode
 
 ### Payment Gateway:
 
-Option 1: Stripe but handle taxes manually
-Option 2: LemonSqueezy an MOR (Merchant of Record) that handles taxes for you
+**Option 1**: Stripe but handle taxes manually\
+**Option 2**: LemonSqueezy an MOR (Merchant of Record) that handles taxes for you
 
 
-## Marketing Strategy
+### Marketing Strategy
 
 **Note**: I am not a marketing expert, so I will be exploring the following marketing strategies based on my limited knowledge:
 
-Now the question is how do I get users to install my extension, the first key part is understanding your audience, and knowing what community they belong to, and where they hang out. My extension centres around Shopify Integration so that means, joining the same spaces as my audience and engaging with them. The goal is not to appear spammy but to provide value and engage with the community, develop a level of reputation, and contribute resources that have a marketing pitch around your extension. Discord, Reddit and Social media are good mediums for reaching out to a wide audience, it also helps if the author has a level of influence within each community and by influence, it means having a reputation that's tied to the platform being targeted, it shows a level of expertise and trustworthiness.
+Now the question is how do I get users to install my extension, the first key part is understanding your audience, and knowing what community they belong to, and where they hang out. My extension centres around Shopify Integration so that means, joining the same spaces as my audience and engaging with them. The goal is not to appear 'spammy' but to provide value and engage with the community, develop a level of reputation, and contribute resources that have a marketing pitch around your extension. Discord, Reddit and Social media are good mediums for reaching out to a wide audience, it also helps if the author has a level of influence within each community and by influence, it means having a reputation that's tied to the platform being targeted, it shows a level of expertise and trustworthiness.
 
 
 
