@@ -4,7 +4,7 @@ excerpt: "Exploring a Saas Chrome Extension"
 categories:
   - Saas
   - Chrome Extension
-date: 2024-28-10
+date: 2024-10-28
 author: "Okeowo Aderemi"
 tags:
   - [saas, chrome-extension]
