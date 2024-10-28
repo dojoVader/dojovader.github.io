@@ -39,7 +39,7 @@ body {
 .page {
   @include breakpoint($large) {
     float: right;
-    
+
     width: calc(100% - #{$left-sidebar-width-narrow});
     padding-right: $right-sidebar-width-narrow;
     /* 2022.01.19 gap between sidebar and page */
@@ -47,7 +47,7 @@ body {
   }
 
   @include breakpoint($x-large) {
-    
+
     width: calc(100% - #{$left-sidebar-width});
     padding-right: $right-sidebar-width;
     /* 2022.01.19 gap between sidebar and page */
@@ -93,7 +93,7 @@ body {
 }
 
 .page__content {
-  font-size: 0.9em;
+  font-size: 1.2em;
   font-weight: normal;
 
   h1 {
@@ -553,7 +553,7 @@ body {
   .page {
     width:100%;
     float:inherit;
-    
+
     @include breakpoint($large) {
       padding-right: 0;
       /* 2022.01.20 add padding-left */
@@ -580,7 +580,7 @@ body {
       line-height: 1.5;
       font-size: $type-size-2;
       text-align: center;
-    
+
       & + .page__meta {
         margin-top: -0.5em;
         font-size: $type-size-6;
