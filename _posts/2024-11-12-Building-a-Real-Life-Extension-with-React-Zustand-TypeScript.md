@@ -11,7 +11,7 @@ tags:
   - [react, zustand, chrome-extension]
 toc: true
 toc_sticky: true
-permalink: /chrome-extension/building-a-shopify-theme/
+permalink: /shopify/building-a-shopify-theme-day-1/
 ---
 
 
