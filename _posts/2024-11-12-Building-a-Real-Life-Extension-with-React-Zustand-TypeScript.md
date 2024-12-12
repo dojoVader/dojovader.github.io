@@ -93,22 +93,10 @@ So I loaded the code in the theme.liquid and added the web component to the rich
 
 
 ```liquid
- {%- when 'heading' -%}
 
               <shopify-component>
                 <Button></Button>
               </shopify-component>
-              <h2
-                class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {{ block.shopify_attributes }}
-                {% if settings.animations_reveal_on_scroll %}
-                  data-cascade
-                  style="--animation-order: {{ forloop.index }};"
-                {% endif %}
-              >
-                {{ block.settings.heading }}
-              </h2>
-
 ```
 
 ### Screenshots
