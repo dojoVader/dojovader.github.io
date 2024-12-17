@@ -109,7 +109,7 @@ Header Group (Static Section in theme.liquid)
           "type": "topbar",
           "settings": {
             "signInText": "Sign in",
-            "createAccountText": "Create an account",
+            "createAccountText": "Create an account"
           }
           
         }
@@ -121,11 +121,13 @@ Header Group (Static Section in theme.liquid)
 
 
 Top Bar Block
-```
-
+```liquid
+{% raw %}
 {{ 'section-top-bar.css' | asset_url | stylesheet_tag }}
+{% endraw %}
 
-<div class="top-bar-section flex justify-end py-3 gap-8 mr-64" id="{{ section.id }}">
+<div class="top-bar-section flex justify-end py-3 gap-8 mr-64" id="{% raw %}{{ section.id }}{% endraw %}">
+  {% raw %}
   {% if section.blocks.first.settings.signInText != blank %}
     <a class="text-white" href="{{ routes.account_login_url }}">
       <span>{{ section.blocks.first.settings.signInText }}</span>
@@ -136,9 +138,11 @@ Top Bar Block
       <span>{{ section.blocks.first.settings.createAccountText }}</span>
     </a>
   {% endif %}
+  {% endraw %}
 </div>
 
-Schema
+```
+```json
 {
   "name": "Top bar",
   "class": "top-bar-section",
