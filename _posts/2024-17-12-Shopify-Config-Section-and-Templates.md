@@ -121,7 +121,7 @@ Header Group (Static Section in theme.liquid)
 
 
 Top Bar Block
-```text 
+```
 
 {{ 'section-top-bar.css' | asset_url | stylesheet_tag }}
 
@@ -178,9 +178,8 @@ Schema
     }
   ]
 }
-
-
 ```
+
 So what I did to create the Top bar from Figma, was to create a block with settings and localization. The block was then added to the section schema and the section was added to the template JSON.
 
 If you notice, the template of the block is driven by the block settings, so whenever a user changes the settings of the block, the block will be re-rendered based on the new settings, I also used Tailwind CSS to avoid doing too much CSS.
