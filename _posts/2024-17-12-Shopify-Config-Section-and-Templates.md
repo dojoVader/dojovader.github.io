@@ -121,7 +121,7 @@ Header Group (Static Section in theme.liquid)
 
 
 Top Bar Block
-```json 
+```liquid 
 
 {{ 'section-top-bar.css' | asset_url | stylesheet_tag }}
 
