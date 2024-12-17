@@ -138,7 +138,7 @@ Top Bar Block
   {% endif %}
 </div>
 
-{% schema %}
+Schema
 {
   "name": "Top bar",
   "class": "top-bar-section",
@@ -178,7 +178,7 @@ Top Bar Block
     }
   ]
 }
-{% endschema %}
+
 
 ```
 So what I did to create the Top bar from Figma, was to create a block with settings and localization. The block was then added to the section schema and the section was added to the template JSON.
