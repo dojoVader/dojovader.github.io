@@ -121,7 +121,7 @@ Header Group (Static Section in theme.liquid)
 
 
 Top Bar Block
-```liquid 
+```text 
 
 {{ 'section-top-bar.css' | asset_url | stylesheet_tag }}
 
