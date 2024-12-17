@@ -89,7 +89,7 @@ There are multiple types of blocks and each type have specific ways of being dec
 
 **App blocks**: These are blocks that are defined by an app and can be used in any section. They are defined in the blocks folder of the app.
 
-**Section blocks**: These are blocks that are defined in a section and can only be used in that section. They are defined in the blocks folder of the section.
+**Section blocks**: These are blocks that are defined in a section and can only be used in that section. They are defined in the blocks schema of the section.
 
 
 
