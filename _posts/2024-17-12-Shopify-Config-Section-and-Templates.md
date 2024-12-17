@@ -35,11 +35,7 @@ Layout => Templates => Sections => Blocks => Block Settings
 
 The layout is the base UI of the theme, it's similar to the master page in ASP.NET. It's the first thing that gets loaded when a user visits the site. The layout consists of section, section groups and some liquid codes to insert assets like CSS and JS. So my first approach was to have the base skin implemented before working on each individual templates. It's also possible for layouts to have static sections ( sections that are embedded in the layout through code), these sections cannot be removed, so it's important not to abuse the use of static sections.
 
-Here is a sample of a static section in the layout
 
-<code>
-{% section 'header-group' %}
-</code>
 
 ## Templates
 
