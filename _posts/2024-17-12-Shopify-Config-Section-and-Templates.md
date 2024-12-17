@@ -37,9 +37,9 @@ The layout is the base UI of the theme, it's similar to the master page in ASP.N
 
 Here is a sample of a static section in the layout
 
-```liquid
+<code>
 {% section 'header-group' %}
-```
+</code>
 
 ## Templates
 
