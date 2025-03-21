@@ -61,15 +61,15 @@ The Spring boot framework was my initial choice; but after several consideration
 
 As mentioned in the previous posts, middleware offers a great opportunity to safeguard important credentials, track premium users and extend functionalities beyond the client. The following are some of the benefits that Saas extensions can benefit from:
 
-- API Quota ( Offers an opportunity to track user quota(s) especially when making Open AI calls, once exhausted users can be prompted to refill
+- API Quota ( Offers an opportunity to track user quota(s) especially when making Open AI calls, once exhausted users can be prompted to refill via Stripe.
 - Authentication
 - Data-Bridge ( Communicate with external services through Proxy requests)
 - Stripe Integration ( Handle user subscription to premium features)
-- Data Extraction and Scrapping ( Sending scrapped information from DOM to API e.g Hubspot, Apolo)  
+- Data Extraction and Scrapping ( Sending scrapped information from DOM to API e.g Hubspot, Apollo)
 
 #### Conclusion
 
-And that's it, in the next article I will discuss how I used NestJS to develop an API Quota around PicStart API and integrate with the Bubble API to authenticate users, but till then.
+And that's it, in the next article I will discuss how I used NestJS to develop an API Quota around PicStart API and integrate with the Bubble API to authenticate users for a chrome extension.
 
 Adios
 
