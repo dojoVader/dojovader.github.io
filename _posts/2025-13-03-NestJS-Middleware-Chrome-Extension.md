@@ -1,5 +1,5 @@
 ---
-title: "NestJS and Chrome Extension for Middleware and API Integration (Part 1)"
+title: "NestJS for Middleware and API Integration for Chrome extension (Part 1)"
 excerpt: "Exploring NestJS and Chrome Extension for Middleware and API Integration"
 categories:
   - NestJS
