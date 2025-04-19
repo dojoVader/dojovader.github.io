@@ -13,7 +13,7 @@ social:
 # Theme Settings
 
 # Your site's logo. Will be shown on the left top of your page.
-logo: /img/me.png
+logo: ./img/me.png
 # If the images of our blog are stored in an external cloud. You can use the jekyll-img-prefix plugin and set your images' base URL here.
 #img_prefix: https://your-img-cdn.com
 # The RSS link of your blog.
@@ -26,7 +26,7 @@ theme_setting:
   # The ← back URL on the top of your post page. Default is your site's home page.
   blog_page: "blog/index.md"
   # The URL on your name on the bottom of your post and page. Default is your site's home page.
-  about_page: "about.md"
+  about_page: "_pages/about.md"
   #  The URL of the menu icon(which has three black lines). Will be shown on the slides/book/chapter layouts It won't be shown if blank.
   archive_page: "archive.md"
   # The nav links on the top right of home/page/post/blog layout. You can set a local page(by setting a layout's path) or and external link ( both title and url are required) here.
