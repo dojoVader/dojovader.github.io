@@ -14,7 +14,7 @@ jobs:
     - name: Set up Ruby 3.0
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 3.1.0
+        ruby-version: 3.1.5
 
     - name: Publish to GPR
       run: |
