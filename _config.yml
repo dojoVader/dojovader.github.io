@@ -3,6 +3,7 @@ description: A personal journal of my thoughts and experiences.
 email: okeowoaderemi@gmail.com
 
 author: qtguru #  Default is your site title.
+theme: jekyll-theme-persephone
 
 # # Your social accounts.
 social:
