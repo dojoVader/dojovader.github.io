@@ -104,8 +104,13 @@
                 let anchorNode = document.createElement("a");
                 anchorNode.href = image.src;
                 anchorNode.dataset.lightbox = image.alt;
+                image.parentNode.appendChild(anchorNode);
                 anchorNode.appendChild(image);
-                image.parentNode.replaceChild(anchorNode, image);
+            });
+
+            lightbox.option({
+                resizeDuration: 200,
+                wrapAround: true,
             });
         });
     </script>
