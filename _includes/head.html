@@ -98,11 +98,9 @@
     ></script>
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function () {
-            // Find all the images
             const images = document.querySelectorAll("img");
-            // Add a click event listener to each image
+
             Array.from(images).forEach((image) => {
-                // Create an anchor for our lightbox
                 let anchorNode = document.createElement("a");
                 anchorNode.href = image.src;
                 anchorNode.dataset.lightbox = image.alt;
