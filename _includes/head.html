@@ -50,6 +50,13 @@
         title="sitemap"
         href="{{ site.url }}{{ site.baseurl }}/sitemap.xml"
     />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css"
+        integrity="sha512-xtV3HfYNbQXS/1R1jP53KbFcU9WXiSA1RFKzl5hRlJgdOJm4OxHCWYpskm6lN0xp0XtKGpAfVShpbvlFH3MDAA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
 
     {% if site.googlewebfonts %}
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -65,6 +72,12 @@
         {% endcapture %}
         {{ include_to_scssify | scssify }}
     </style>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
     <!-- Google tag (gtag.js) -->
     <script
         async
@@ -83,4 +96,19 @@
         type="text/javascript"
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
     ></script>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            // Find all the images
+            const images = document.querySelectorAll("img");
+            // Add a click event listener to each image
+            Array.from(images).forEach((image) => {
+                // Create an anchor for our lightbox
+                let anchorNode = document.createElement("a");
+                anchorNode.href = image.src;
+                anchorNode.dataset.lightbox = image.alt;
+                anchorNode.appendChild(image);
+                image.parentNode.replaceChild(anchorNode, image);
+            });
+        });
+    </script>
 </head>
