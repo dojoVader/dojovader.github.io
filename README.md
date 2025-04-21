@@ -1,70 +1,67 @@
-# jekyll-theme-persephone
+# Gesko
 
-[![Gem Version](https://badge.fury.io/rb/jekyll-theme-persephone.svg)](https://rubygems.org/gems/jekyll-theme-persephone)
+Simple and minimal Jekyll blog. 
+Forked from [Asko](https://github.com/manuelmazzuola/asko).
+Original theme from [Sidey](https://github.com/ronv/sidey).
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
+### Features
 
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
+- [x] Responsive Design
+- [x] Dark/Ligh theme 🌗
+- [x] Inline CSS
+- [x] Anchor headings
+- [x] Tags & Tag pages 
+- [x] 404 page 
+- [x] Robots.txt 🤖
+- [x] Atom & Json feeds 📡
+- [x] Sass 
+- [x] About page, with Timeline! 🗣️
+- [x] PageSpeed and w3Validator tests PASSED ✔️
+- [x] Search bar 🔎
+- [x] Next & Previous Post ⏮️ ⏭️
+- [x] Automatic/Manual reading time estimation 🕐
+- [x] Disqus section (optional) ✍️ 
 
-[DEMO with full functions.](http://demo.erl.im)
 
-[A simple blog demo](https://en.erl.im)
+## Screenshot
 
-## Demo
-
-| ![home layout](/screenshots/home.png) | ![blog layout](/screenshots/blog.png) |
-| -- | -- |
-| `layout: home` [Demo](https://en.erl.im/blog/) | `layout: blog` [Demo](https://en.erl.im/archive/) |
-| ![post layout](/screenshots/post.png) | ![page layout](/screenshots/page.png) |
-| `layout: post` [Demo](https://en.erl.im/blog/jekyll-theme-persephone.html) | `layout: page` [Demo](https://jekyll-theme-persephone.netlify.app/about.html) |
-| ![archive layout](/screenshots/archive.png)      | ![slides layout](/screenshots/slides.png) |
-| ![book layout](/screenshots/book.png) | ![chapter layout](/screenshots/chapter.png) |
-| <strong style="color: red">*</strong> `layout: book` [Demo](https://jekyll-theme-persephone.netlify.app/corner) | <strong style="color: red">*</strong> `layout: chapter` [Demo](https://jekyll-theme-persephone.netlify.app/corner/1.html) |
-
-The layout with red * relied on a jekyll books generator plugin: [`jekyll-books`](https://github.com/erlzhang/jekyll-books)
+![light-theme](https://github.com/DavideBri/Gesko/blob/master/light-theme.jpg)
+![dark-theme](https://github.com/DavideBri/Gesko/blob/master/dark-theme.jpg)
 
 ## Installation
 
-Add this line to your Jekyll site's `Gemfile`:
+Be sure to have all [you need](https://jekyllrb.com/docs/installation/) before running anything. 
 
-```ruby
-gem "jekyll-theme-persephone"
+Run local server:
+
+```bash
+$ git clone https://github.com/DavideBri/Gesko.git
+$ cd Gesko
+$ bundle install
+$ bundle exec jekyll build
+$ bundle exec jekyll serve
 ```
 
-And add this line to your Jekyll site's `_config.yml`:
+Navigate to `localhost:4000`. You're Welcome, Fork and be Stargazer.
+If you want to upload it to Github Pages, remember to update the `_congif.yml` and if you are going to upload in a repo called yournickname.github.io, remember to update the `{{ site.baseurl }}` to `{{ site.url }}` .
+Note that there is also a gtag in the [`_layouts/default.html`](https://github.com/DavideBri/Gesko/blob/6776e4afc384dc3d50ce2001715929c8e70a914c/_layouts/default.html#L9), you should remove it.
 
-```yaml
-theme: jekyll-theme-persephone
+To create new tag, create a folder in `tag/` with the name of the new one. In this folder add an `index.html` file and just add this header:
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install jekyll-theme-persephone
-
-## Usage
-
-- [Settings](/_config.yml)
-- [Layouts](/docs/layouts.md)
-- [Comments](/docs/comments.md)
-- [`jekyll-books` generator](/docs/books.md)
+---
+layout: tag
+tag: yourNewTag
+---
+```
+Then build again and you're ready!!
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/erlzhang/jekyll-theme-persephone. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Yeaaa feel free to open a pull request.
 
-## Development
 
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `jekyll-theme-persephone.gemspec` accordingly.
+If you see any typos or formatting errors in a post, or want to helping reduce backlogs or any other issue that needs to be addressed, please do not hesitate to open a pull request and fix it!, please read [contributing](./CONTRIBUTING.md) before PR.
 
 ## License
 
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+This project is open source and available under the [MIT License](LICENSE.md).

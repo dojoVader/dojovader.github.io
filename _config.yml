@@ -1,85 +1,96 @@
-title: My Personal Journal
-description: A personal journal of my thoughts and experiences.
-email: okeowoaderemi@gmail.com
+site: Gesko
+title: Gesko
+greetings: Hello there! 👋
+description: >-
+  just a minimalist, personal blog
+lang: en-US
+timezone:  Europe/Rome
+repo: https://github.com/DavideBri/Gesko # site repo [optional]
+data-theme: dark # default theme "dark" | "light"
+discus-identifier: # replace with your disqus shortname
+comments-enabled: false # true to enable disqus comments, false to hide them
 
-author: qtguru #  Default is your site title.
+author:
+  name: gesko
+  bio: just a minimalist, personal blog
+  userpicture: 
+  username: # general username
+  github: DavideBri # github username
+  twitter: # twitter username
+  mastodon: hachyderm.io/@davidebri # mastodon profile (ex. mastodon.social/@my_username)
+  linkedin: # linkedin profile
+  email: your-email@email.com # email adress
 
-# # Your social accounts.
-social:
-  github: dojoVader
-  twitter: qtguru
-  linkedin: okeowo-aderemi-82b75730
+# Font Settings
+googlewebfonts: family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
 
-# Theme Settings
+# URL settings
+url: "https://DavideBri.github.io" # Domain Name of host. [username].github.io for github pages
+baseurl: "/Gesko" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
+permalink: pretty
 
-# Your site's logo. Will be shown on the left top of your page.
-logo: ./img/me.png
-# If the images of our blog are stored in an external cloud. You can use the jekyll-img-prefix plugin and set your images' base URL here.
-#img_prefix: https://your-img-cdn.com
-# The RSS link of your blog.
-rss: "/feed.xml"
+# local
+# url: "http://localhost:4000" # 
+# baseurl: "" # 
 
-# The followings are settings for displays of your blog.
-theme_setting:
-  # The slides count in the slides layout. Default is 4.
-  slides_count: 5
-  # The ← back URL on the top of your post page. Default is your site's home page.
-  blog_page: "blog/index.md"
-  # The URL on your name on the bottom of your post and page. Default is your site's home page.
-  about_page: "_pages/about.md"
-  #  The URL of the menu icon(which has three black lines). Will be shown on the slides/book/chapter layouts It won't be shown if blank.
-  archive_page: "archive.md"
-  # The nav links on the top right of home/page/post/blog layout. You can set a local page(by setting a layout's path) or and external link ( both title and url are required) here.
-  nav_pages:
-    - "about.md"
-    - title: "My Website"
-      url: "https://okeowoaderemi.com"
-    - title: "Upwork Profile"
-      url: "https://www.upwork.com/freelancers/okeowoaderemi"
-    - title: "My Youtube"
-      url: "https://www.youtube.com/@okeowoaderemi/videos"
-  # Every default value in the following settings is false. You can set them globally here or separately in a single post/page/chapter.
-  code: true # Code highlight.
-  math: true # Mathjax
-  mermaid: true # Mermaid
-  #  Locales of this theme.
-  lang:
-    category_all: All # The first tag in the categories bar on the blog layout page. By clicking it all of your posts will be shown. Default is 'All'.
-    blog_title: Blog # The text of ← back url on the top of the post layout.  Default is 'Home'.
-    # The locales of the comment controls.
-    # comment:
-    #   user: "昵称"
-    #   email: "邮箱"
-    #   url: "链接"
-    #   message: "说点什么吧..."
-    #   reply: "回复"
 
-head_code: |
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2K2P5C1VVE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
-    gtag('config', 'G-2K2P5C1VVE');
-  </script>
-  <!-- Extra codes in the head of your site pages. You can add your Google Analysis codes here! -->
 
-# The settings of comments.
-comment:
-  # You should set it to enable comment
-  enabled: true
-  # Your comment provider
-  provider: disqus # static/disqus
-  # If provider == disqus
-  disqus:
-    name: dojovader
-  # Or provider == static
-  # static:
-  #   # Your static comment url.
-  #   postUrl: https://api.staticman.net/v2/connect/GITHUB-USERNAME/GITHUB-REPOSITORY
-# The settings of local smileys used in static comments. The jekyll-smiley plugin is required.
-# smiley:
-#   enabled: true
-#   dir: img/smileys
+exclude:
+  - .jekyll-cache
+  - .obsidian
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - CONTRIBUTING.md
+  
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-relative-links
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:slug
+  
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+relative_links:
+  enabled:     true
+  collections: false
+
+

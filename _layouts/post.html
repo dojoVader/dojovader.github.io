@@ -1,42 +1,43 @@
 ---
 layout: default
 ---
-{%- include header.html -%}
-<main class="post__wrapper">
-  {%- include header_nav.html -%}
-  <div class="post__top_navs clearfix">
-    <nav class="post__archive_path">
-      {%- assign blog_page_path = site.theme_setting.blog_page | default: "index.md" %}
-      {%- assign blog_page = site.pages | where: "path", blog_page_path | first -%}
-      <a href="{{ blog_page.url | relative_url }}" id="archiveBtn">
-        <div class="post__archive_icon">
-          <svg width="40" height="40">
-            <circle class="circle-progress" r="18" cy="20" cx="20"  stroke-linejoin="round" stroke-linecap="round" />
-          </svg>
-          <span class="post__archive_icon"></span>
-        </div>
-        {{ site.theme_setting.lang.blog_title | default: site.title }}
-      </a>
-    </nav>
+
+
+<section class="post">
+  <div class="flex-row-between">
+	  <a href="{{ site.url }}{{ site.baseurl }}/">« back</a>
+    <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+      <div></div>
+    </button>
   </div>
-  <article class="post">
-    <header class="post__header">
-      <h1 class="post__title">{{ page.title | escape }}</h1>
-      <div class="post__meta">
-        <time>{{ page.date | date: "%Y-%m-%d %H:%M" }}</time>
-      </div>
-    </header>
-    <div class="post__content content">
-      {{ content | toc | img_prefix }}
-    </div>
-  </article>
-  {%- if site.comment.enabled -%}
-  {% include comments.html -%}
-  {%- else -%}
-  {% include contact.html -%}
-  {%- endif -%}
-</main>
-{%- if site.theme_setting.code or page.code -%}
-  <script>hljs.initHighlightingOnLoad();</script>
-{%- endif -%}
-{%- include footer.html -%}
+  {% assign minute=content | number_of_words | divided_by: 265 | plus: 1 %}
+  <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }} -  
+    {% if page.minute %} {{ page.minute }} {% else %} {{ minute }} {% endif %}' read</time>
+  <h1 class="title">{{ page.title }}</h1>
+  <span class="meta">
+    {% for tag in page.tags %}
+    <a href="{{ site.url }}{{ site.baseurl }}/tag/{{tag}}">{{tag}}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>
+  {{ content }}
+</section>
+
+<section>
+
+  <nav class="post-nav">
+    {% if page.previous %}
+    <a class="post-nav-item post-nav-prev" href="{{ page.previous | relative_url }}">
+      <div class="nav-arrow">Previous</div>
+      <span class="post-title">{{ page.previous.title }}</span>
+    </a>
+    {% endif %} {% if page.next %}
+    <a class="post-nav-item post-nav-next" href="{{ page.next | relative_url }}">
+      <div class="nav-arrow">Next</div>
+      <span class="post-title">{{ page.next.title }}</span>
+    </a>
+    {% endif %}
+
+  </nav>
+</section>
+
+{% if site.comments-enabled %}
+  {% include disqus.html %}
+{% endif %}
