@@ -1,44 +1,41 @@
-site: Gesko
-title: Gesko
-greetings: Hello there! 👋
+site: qtguru
+title: Qtguru
+greetings: Salutations Huzz 👋
 description: >-
-  just a minimalist, personal blog
+  Qtguru personal diary about freelancing, coding, and personal growth.
 lang: en-US
-timezone:  Europe/Rome
-repo: https://github.com/DavideBri/Gesko # site repo [optional]
+timezone: US/Pacific
+repo: https://github.com/dojovader # site repo [optional]
 data-theme: dark # default theme "dark" | "light"
 discus-identifier: # replace with your disqus shortname
-comments-enabled: false # true to enable disqus comments, false to hide them
+comments-enabled: true # true to enable disqus comments, false to hide them
 
 author:
-  name: gesko
+  name: qtguru
   bio: just a minimalist, personal blog
-  userpicture: 
+  userpicture:
   username: # general username
-  github: DavideBri # github username
-  twitter: # twitter username
-  mastodon: hachyderm.io/@davidebri # mastodon profile (ex. mastodon.social/@my_username)
-  linkedin: # linkedin profile
-  email: your-email@email.com # email adress
+  github: dojovader # github username
+  twitter: qtguru# twitter username
+  email: okeowoaderemi@gmail.com # email adress
 
 # Font Settings
-googlewebfonts: family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
+googlewebfonts: family=JetBrains+Mono:ital,wght@0,100..800;1,100..800
 
 # URL settings
-url: "https://DavideBri.github.io" # Domain Name of host. [username].github.io for github pages
-baseurl: "/Gesko" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
+url: "https://dojovader.github.io" # Domain Name of host. [username].github.io for github pages
+baseurl: "/" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
 permalink: pretty
+google_analytics: G-2K2P5C1VVE
 
 # local
-# url: "http://localhost:4000" # 
-# baseurl: "" # 
-
+# url: "http://localhost:4000" #
+# baseurl: "" #
 
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-
 
 exclude:
   - .jekyll-cache
@@ -48,7 +45,7 @@ exclude:
   - LICENSE.md
   - README.md
   - CONTRIBUTING.md
-  
+
 compress_html:
   clippings: all
   comments: ["<!-- ", " -->"]
@@ -69,28 +66,23 @@ collections:
   posts:
     output: true
     permalink: /:year/:month/:day/:slug
-  
+
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
     values:
       layout: "default"
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
       layout: "page"
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
 
 relative_links:
-  enabled:     true
+  enabled: true
   collections: false
-
-
