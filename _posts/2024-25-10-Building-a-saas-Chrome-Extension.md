@@ -1,5 +1,5 @@
 ---
-title: "NestJS and Chrome Extension for Middleware and API Integration"
+title: "Building a Saas Chrome Extension"
 excerpt: "Exploring NestJS and Chrome Extension for Middleware and API Integration"
 categories:
   - NestJS
