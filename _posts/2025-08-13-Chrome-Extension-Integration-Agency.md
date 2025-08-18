@@ -1,5 +1,5 @@
 ---
-title: "Agency Notes: The Perfect platform tool for Chrome Extension Development"
+title: "The Perfect platform tool for Chrome Extension Development (Agency Log)"
 excerpt: "The Perfect platform tool for Chrome Extension Development"
 categories:
   - NestJS
