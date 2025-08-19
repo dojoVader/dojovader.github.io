@@ -10,7 +10,7 @@ categories:
 date: 2025-08-18
 author: "Okeowo Aderemi"
 tags:
-  - "freelance", "upwork", "chrome-extension", "nestjs", "saas", "platform-tool"
+  - [freelance, upwork, chrome-extension, nestjs, saas, platform-tool]
 toc: true
 toc_sticky: true
 permalink: /chrome-extension-platform-tool/
