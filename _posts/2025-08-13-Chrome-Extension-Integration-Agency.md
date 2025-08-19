@@ -1,6 +1,6 @@
 ---
-title: "The Perfect platform tool for Chrome Extension Development (Agency Log)"
-excerpt: "The Perfect platform tool for Chrome Extension Development"
+title: "The Perfect platform tool for Chrome Extension Integration"
+excerpt: "The Perfect platform tool for Chrome Extension Integration"
 categories:
   - NestJS
   - Upwork
