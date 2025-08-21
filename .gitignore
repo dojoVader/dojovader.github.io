@@ -1,10 +1,21 @@
-tmp
-*.rdb
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
 .env
-.sass-cache
+.env.production
+
+# macOS-specific files
 .DS_Store
-_site
-.jekyll-cache
-.git
-.vscode
-.obsidian
