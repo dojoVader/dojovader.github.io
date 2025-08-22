@@ -89,19 +89,6 @@ const navLinks = siteConfig.headerNavLinks || [];
         }
     }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K2P5C1VVE" is:inline></script>
 
-<script>
-    function menuToggle() {
-        const menu = document.querySelector('.menu');
-        const menuToggleBtn = document.querySelector('.menu-toggle');
-        menuToggleBtn?.addEventListener('click', () => {
-            const isMenuExpanded = menuToggleBtn.getAttribute('aria-expanded') === 'true';
-            menuToggleBtn.classList.toggle('is-active');
-            menuToggleBtn.setAttribute('aria-expanded', isMenuExpanded ? 'false' : 'true');
-            menuToggleBtn.setAttribute('aria-label', isMenuExpanded ? 'Open Menu' : 'Close Menu');
-            menu?.classList.toggle('is-visible');
-        });
-    }
-    menuToggle();
-    document.addEventListener('astro:after-swap', menuToggle);
-</script>

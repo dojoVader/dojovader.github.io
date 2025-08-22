@@ -36,10 +36,12 @@ export type SiteConfig = {
     subscribe?: Subscribe;
     postsPerPage?: number;
     projectsPerPage?: number;
+    googleAnalyticsId?: string;
 };
 
 const siteConfig: SiteConfig = {
     website: 'https://dojovader.github.io',
+    googleAnalyticsId: 'G-8X1Z3V9F5E',
     title: 'Qtguru',
     subtitle: 'Welcome to my diary',
     description: 'A simple archive of some of my ideas, projects and works',

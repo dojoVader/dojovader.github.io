@@ -5,6 +5,7 @@ import { defineConfig } from 'astro/config';
 import siteConfig from './src/data/site-config';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
+import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({

@@ -4,6 +4,7 @@ import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro'
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Nav from '../components/Nav.astro';
+import { GoogleAnalytics } from 'astro-google-analytics';
 
 export type Props = HeadProps & { showHeader?: boolean };
 
@@ -14,13 +15,17 @@ const { showHeader = true, ...head } = Astro.props;
 <html lang="en" class="antialiased break-words">
     <head>
         <BaseHead {...head} />
+
         <script>
             if (localStorage.theme === 'dark') {
                 document.documentElement.classList.add('dark');
             }
         </script>
+
         <ClientRouter />
+
     </head>
+    <GoogleAnalytics id={'G-2K2P5C1VVE'} />
     <body class="bg-main text-main">
         <div class="flex flex-col min-h-screen px-4 md:px-8">
             <Nav />
@@ -29,6 +34,9 @@ const { showHeader = true, ...head } = Astro.props;
                 <slot />
             </main>
             <Footer />
+
         </div>
+
     </body>
+
 </html>
