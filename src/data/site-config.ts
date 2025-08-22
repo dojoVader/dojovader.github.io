@@ -101,7 +101,7 @@ const siteConfig: SiteConfig = {
         title: 'Personal diary about freelancing, coding, and personal growth.',
         text: `<p>As a fullstack engineer, I’ve spent countless hours crafting Chrome extensions and building robust web applications, diving deep into the interplay of front-end and back-end systems. The challenge of creating seamless user experiences while ensuring scalable, efficient code is what fuels my passion for development. But lately, I’ve been itching to branch out and explore new creative and technical territories.<p>
 
-<p>At the same time, I’m diving into learning C and Kotlin. C’s low-level control fascinates me. It’s like peering under the hood of software development, understanding memory and performance at a granular level. Kotlin, with its modern syntax and Android development potential, feels like a natural next step to expand my mobile development skills.</p>
+<p>At the same time, I’m diving into learning C. C’s low-level control fascinates me. It’s like peering under the hood of software development, understanding memory and performance at a granular level. </p>
 
 <p>Balancing my fullstack roots with these new pursuits keeps my curiosity alive and my skills sharp. Stay tuned as I share more about this journey of blending creativity and code!
         </p>`,
