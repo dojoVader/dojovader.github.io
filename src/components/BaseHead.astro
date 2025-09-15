@@ -54,8 +54,9 @@ function formatCanonicalURL(url: string | URL) {
 <!-- Page Metadata -->
 <link rel="canonical" href={formatCanonicalURL(canonicalURL)} />
 <link rel="stylesheet" href={"/dracula.css"} />
+<link href={"/css/lightbox.min.css"} rel="stylesheet" />
 <meta name="description" content={description} />
-
+<script is:inline src="/js/lightbox.js"></script>
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={pageType} />
 <meta property="og:url" content={formatCanonicalURL(canonicalURL)} />

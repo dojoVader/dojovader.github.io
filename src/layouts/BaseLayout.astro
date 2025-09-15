@@ -40,8 +40,27 @@ const { showHeader = true, ...head } = Astro.props;
     </body>
     <script>
 
+    // Let's find all the images on the page
+    //
+
+    const loadLB = () => {
+      // Find all the images
+      const images = document.querySelectorAll('img');
+      Array.from(images).forEach(item => {
+        const parentElement = item.parentElement;
+        // Create the anchor linkf or the images
+        const anchorLink = document.createElement('a');
+        anchorLink.setAttribute('data-lightbox','screenshots');
+        anchorLink.appendChild(item);
+        anchorLink.href = item.src;
+        parentElement?.append(anchorLink);
+      });
+    }
+
     console.log("Init Fired");
     document.addEventListener('DOMContentLoaded',() => {
+
+      loadLB();
       // Get the width of the screen
       const execute = () => {
         const queryElement = document.querySelector("button.menu-toggle");
