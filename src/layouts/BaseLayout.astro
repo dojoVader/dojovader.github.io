@@ -45,6 +45,7 @@ const { showHeader = true, ...head } = Astro.props;
 
     const loadLB = () => {
       // Find all the images
+      if(window.loaded) return false;
       const images = document.querySelectorAll('img');
       Array.from(images).forEach(item => {
         const parentElement = item.parentElement;
@@ -55,12 +56,14 @@ const { showHeader = true, ...head } = Astro.props;
         anchorLink.href = item.src;
         parentElement?.append(anchorLink);
       });
+
+      window.loaded = true;
     }
 
     console.log("Init Fired");
     document.addEventListener('DOMContentLoaded',() => {
 
-      loadLB();
+
       // Get the width of the screen
       const execute = () => {
         const queryElement = document.querySelector("button.menu-toggle");
