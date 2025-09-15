@@ -66,6 +66,7 @@ const { showHeader = true, ...head } = Astro.props;
 
       // Get the width of the screen
       const execute = () => {
+        loadLB();
         const queryElement = document.querySelector("button.menu-toggle");
         queryElement?.addEventListener('click',() => {
           const isMobileScreen = screen.availWidth <= 480;
