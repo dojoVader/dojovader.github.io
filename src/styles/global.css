@@ -69,11 +69,12 @@ html.dark {
     --background-color-main: var(--bg-main);
     --background-color-muted: var(--bg-muted);
     --border-color-main: var(--border-main);
+    --black-text: black;
 }
 
 @layer utilities {
     .prose {
-        --tw-prose-body: var(--text-color-main);
+        --tw-prose-body: var(--black-text) !important;
         --tw-prose-headings: var(--text-color-main);
         --tw-prose-lead: var(--text-color-main);
         --tw-prose-links: var(--text-color-main);
