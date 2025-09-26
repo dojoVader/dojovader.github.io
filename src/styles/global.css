@@ -64,12 +64,13 @@ html.dark {
 
 @theme inline {
     --font-sans: 'Inter Variable', sans-serif;
+    --black-text: black;
     --font-serif: 'Newsreader Variable', serif;
-    --text-color-main: var(--text-main);
+    --text-color-main: var(--black-text) !important;
     --background-color-main: var(--bg-main);
     --background-color-muted: var(--bg-muted);
     --border-color-main: var(--border-main);
-    --black-text: black;
+
 }
 
 @layer utilities {
