@@ -21,9 +21,9 @@ permalink: /upwork/moodle/
 Today's blog is a short entry about re-entering the Moodle Development scene for income, and here's my rationale:
 
 * Highly Niche and a lot of B2B sites are powered using Moodle
-* I do possess a good understanding in SCORM, VLE and Articulate Storyline for authoring contents. 
+* I have a strong understanding of SCORM and VLE, as well as expertise in using Articulate Storyline for content
+  authoring. 
 * I do have the intention of integrating XR devices and Moodle to form an immersive learning experience.
-* Plans for WebGL and AR are in the works. 
 
 ### Moodle Offers
 
